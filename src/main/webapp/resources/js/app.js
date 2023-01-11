@@ -1,3 +1,4 @@
+console.log("test")
 document.addEventListener("DOMContentLoaded", function() {
 
   /**
@@ -105,7 +106,6 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$stepInstructions = form.querySelectorAll(".form--steps-instructions p");
       const $stepForms = form.querySelectorAll("form > div");
       this.slides = [...this.$stepInstructions, ...$stepForms];
-
       this.init();
     }
 
@@ -151,11 +151,12 @@ document.addEventListener("DOMContentLoaded", function() {
       this.$step.innerText = this.currentStep;
 
       // TODO: Validation
-
+      console.log("update")
       this.slides.forEach(slide => {
         slide.classList.remove("active");
-
+        console.log(slide.dataset.step)
         if (slide.dataset.step == this.currentStep) {
+          console.log("is active " + this.currentStep)
           slide.classList.add("active");
         }
       });
